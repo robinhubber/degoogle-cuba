@@ -9,34 +9,43 @@
 Hace unos meses vi un video de Pewdiepie en Youtube sobre los riesgos de confiar demasiado en el ecosistema digital de Google, por razones de vulneración a la privacidad y obtención por parte de la compañía norteamericana de datos sensibles sobre los usuarios de todo el mundo bajo la premisa del buen samaritano que te facilita la vida digital. Ante esto Pewdiepie decidió eliminar radicalmente sus vínculos con Google, literalmente eliminó cualquier rastro de la compañía en su ecosistema digital, bajo la piedra angular de este proceso: GrapheneOS, un sistema operativo alternativo a las distribuciones tradicionales de los androids del mercado que está enfocado en la privacidad y en devolverte el control de tu propio móvil, algo que siempre debió ser tuyo. Desde entonces he estado francamente obsesionado con este tema, pero lo había dejado en suspenso (tuve algunos intentos bastante humildes al respecto) dadas las condiciones personales que tenía para llevarlo a cabo: primero, el fatalismo geográfico: al vivir en Cuba (y dentro de esta, en un sitio nada medular), mis opciones reales de una conexión estable a internet para realizar todas las descargas y modificaciones parecía alejada; y segundo, las condiciones económicas limitadas, o sea, un móvil de gama baja para el cual tendría que adaptar muchas de las aplicaciones que encontrase investigando dada la lentitud del procesador. Para no aburrir, básicamente me propuse degooglear un Samsung A12 en Cuba sin GrapheneOS (es compatible casi exclusivamente con los Pixel de Google) y sin un internet de fibra óptica para descargar aplicaciones en un pestañazo. Por contextualizar, la mayoría de las veces mi velocidad de descarga no superaba el umbral de los 800kbps, a todo esto, decidí emprender esta odisea en medio de las escalada de presiones económicas hacia la Isla por parte de la administración Trump y los largos períodos de ausencia de electricidad. Antes de comenzar quisiera dejar algo bien claro, esto no es, en ningún sentido un panfleto sobre política, por ende, deseo que se excluya el contenido del mismo de cualquier discusión en ese rubro, esto, solamente, se trata de un acto de soberanía digital bajo condiciones complejas.
 
 # Episodio 2: El primer paso, el navegador web.
-El primer paso, evidentemente debía ser el navegador, no podía pretender usar Chrome con Google como motor de búsqueda para que Google rastreara y guardara toda la información de mis consultas en internet o vendiera mi información personal a compañías de publicidad, pero, con esto existe un problema real, dadas las condiciones de escasa velocidad de internet en Cuba (ya sea mediante datos móviles o WiFi), Google es la alternativa más rápida, y la velocidad en mi contexto era insustituible, porque, a una conexión de 800mbps que se le resten unos 2mbps por usar un motor de búsqueda alterno en nada afecta, pero para mí cada kilobyte era necesario. Con esto explicado, mis alternativas se reducían incluso más, si pensamos en un navegador como Brave (pesado en la privacidad del usuario y bloquedor de anuncios de primer orden), que sería la mejor opción, tenemos que descartarlo, ya que dadas las restricciones del embargo norteamericano a Cuba, el dominio virtual de Brave no es accesible desde la Isla, y usar VPN es impensable, ya que esto también reduce considerablemente la ya mermada conexión disponible. Entonces, ante las limitaciones apareció un salvador, Mozilla Firefox, especialmente su versión para desarrolladores, Nightly, era precisamente lo que necesitaba, Open Source, ligero y, con algunas configuraciones extra, extremadamente privado. Entonces, el primer paso con el navegador decidido era seleccionar el motor de búsqueda, mi primera y más lúcida opción fue DuckDuckGo, a efectos reales es la mejor elección, pero volvemos al fatalismo, DDG resultaba frustrantemente más lento que  Google, de nuevo, en mi contexto, estos retrasos, aunque mínimos, resultaban insostenibles. Entonces apareció la opción de Startpage, buscador que arroja los resultados de Google Search pero elimina toda tu información personal (IP, rastreadores, etc), si bien en 2019 Privacy One Group (subsidiaria de System1, una empresa de publicidad)invirtió en Startpage, estos mantienen su postura en cuanto la privacidad, la elección es, creerles o desconfiar y sacrificar velocidad usando DDG (genuinamente si tienes paciencia es la mejor opción, aunque algunos prefieren Startpage porque muestra los resultados de Google, cosa que DDG no hace). Ya tenía navegador + buscador, un buen combo para la privacidad, pero eso no era todo, necesitaba exprimir firefox, ¿qué hice?:
+El primer paso, evidentemente debía ser el navegador, no podía pretender usar Chrome con Google como motor de búsqueda para que Google rastreara y guardara toda la información de mis consultas en internet o vendiera mi información personal a compañías de publicidad, pero, con esto existe un problema real, dadas las condiciones de escasa velocidad de internet en Cuba (ya sea mediante datos móviles o WiFi), Google es la alternativa más rápida, y la velocidad en mi contexto era insustituible, porque, a una conexión de 800mbps que se le resten unos 2mbps por usar un motor de búsqueda alterno en nada afecta, pero para mí cada kilobyte era necesario. Con esto explicado, mis alternativas se reducían incluso más, si pensamos en un navegador como Brave (pesado en la privacidad del usuario y bloquedor de anuncios de primer orden), que sería la mejor opción, tenemos que descartarlo, ya que dadas las restricciones del embargo norteamericano a Cuba, el dominio virtual de Brave no es accesible desde la Isla, y usar VPN es impensable, ya que esto también reduce considerablemente la ya mermada conexión disponible. Entonces, ante las limitaciones apareció un salvador, Mozilla Firefox, especialmente su versión para desarrolladores, Nightly, era precisamente lo que necesitaba, Open Source, ligero y, con algunas configuraciones extra, extremadamente privado. Entonces, el primer paso con el navegador decidido era seleccionar el motor de búsqueda, mi primera y más lúcida opción fue DuckDuckGo, a efectos reales es la mejor elección, pero volvemos al fatalismo, DDG resultaba frustrantemente más lento que  Google, de nuevo, en mi contexto, estos retrasos, aunque mínimos, resultaban insostenibles. Entonces apareció la opción de Startpage, buscador que arroja los resultados de Google Search pero elimina toda tu información personal (IP, rastreadores, etc), si bien en 2019 Privacy One Group (subsidiaria de System1, una empresa de publicidad)invirtió en Startpage, estos mantienen su postura en cuanto la privacidad, la elección es, creerles o desconfiar y sacrificar velocidad usando DDG (genuinamente si tienes paciencia es la mejor opción, aunque algunos prefieren Startpage porque muestra los resultados de Google, cosa que DDG no hace). Ya tenía navegador + buscador, un buen combo para la privacidad, pero eso no era todo, necesitaba exprimir firefox.
 
-## Como primera capa:
+¿qué hice?:
 
-1- Protección antirrastreo mejorada (Configuración / Privacidad y Seguridad) marcada como «estricta», lo cual bloquea la mayoría de rastreadores visibles y ocultos, acelerando la carga de páginas.
+## Como primera capa
 
-2- Control de envío de datos a Mozilla (también en ajustes), compañía al fin y al cabo, te agradezco por tus servicios, pero prefiero usarte en anonimato.
+1. **Protección antirrastreo mejorada**  
+   (Configuración / Privacidad y Seguridad) marcada como **«estricta»**, lo cual bloquea la mayoría de rastreadores visibles y ocultos, acelerando la carga de páginas.
+2. **Control de envío de datos a Mozilla**  
+   (también en ajustes), compañía al fin y al cabo, te agradezco por tus servicios, pero prefiero usarte en anonimato.
 
-### Como segunda capa: (`about:config`)
-1.  **Desactivar telemetría:**
-    *   `toolkit.telemetry.enabled` -> **false**
-    *   `datareporting.healthreport.uploadEnabled` -> **false**
-2.  **Desactivar preconexiones:**
-    *   `network.prefetch-next` -> **false**
-    *   `network.dns.disablePrefetch` -> **true**
-...
+## Como segunda capa (introduciendo `about:config` en la barra de direcciones)
 
-## Como tercera capa: la capa de cifrado (DNS y Conexiones):
+1. **Desactivación de la telemetría**  
+   - `toolkit.telemetry.enabled` → `false`  
+   - `datareporting.healthreport.uploadEnabled` → `false`
+2. **Desactivación de las preconexiones**  
+   - `network.prefetch-next` → `false`  
+   - `network.dns.disablePrefetch` → `true`
+3. **Clausura de fugas de IP (WebRTC)**  
+   - `media.peerconnection.enabled` → `false`
+4. **Aislamiento de cookies (dFPI)**  
+   - `network.cookie.cookieBehavior` → `5`
+5. **Evasión de la huella digital** (esto puede romper algunas páginas, pues es experimental, usar con precaución)  
+   - `privacy.resistFingerprinting` → `true`
 
-1- Solo conexiones seguras (HTTPS-Only): Configuración/Privacidad y Seguridad
+## Como tercera capa: capa de cifrado (DNS y conexiones)
 
-2- Cifrar las consultas DNS (DNS sobre HTTPS): Configuración/Privacidad y Seguridad/ DNS sobre HTTPS, seleccionar Protección Máxima.
+1. **Solo conexiones seguras (HTTPS-Only)**  
+   Habilítalo en `Configuración > Privacidad y Seguridad`.
+2. **Cifrar las consultas DNS (DNS sobre HTTPS)**  
+   Ve a `Configuración > Privacidad y Seguridad > DNS sobre HTTPS`, selecciona **Protección Máxima** y elige un proveedor (por ejemplo, Cloudflare o NextDNS).
 
-## Como cuarta capa: las extensiones:
+## Como cuarta capa: extensiones
 
-1- uBlock Origin, bloquea anuncios y rastreadores.
-
-2- Bitwarden, gestiona constraseñas de forma segura.
+1. **[uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)** – bloquea anuncios y rastreadores.
+2. **[Bitwarden](https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/)** – gestiona contraseñas de forma segura.
 
 Cabe señalar que las configuraciones de DNS aquí descritas solo aplican a la app de Firefox, ergo, también puse un DNS en los ajustes del móvil: dns.mullvad,net.
 
