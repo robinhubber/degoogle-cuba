@@ -29,11 +29,13 @@ El primer paso, evidentemente debía ser el navegador, no podía pretender usar 
 ## Como tercera capa: la capa de cifrado (DNS y Conexiones):
 
 1- Solo conexiones seguras (HTTPS-Only): Configuración/Privacidad y Seguridad
+
 2- Cifrar las consultas DNS (DNS sobre HTTPS): Configuración/Privacidad y Seguridad/ DNS sobre HTTPS, seleccionar Protección Máxima.
 
 ## Como cuarta capa: las extensiones:
 
 1- uBlock Origin, bloquea anuncios y rastreadores.
+
 2- Bitwarden, gestiona constraseñas de forma segura.
 
 Cabe señalar que las configuraciones de DNS aquí descritas solo aplican a la app de Firefox, ergo, también puse un DNS en los ajustes del móvil: dns.mullvad,net.
