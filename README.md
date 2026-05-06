@@ -10,9 +10,12 @@ Hace unos meses vi un video de Pewdiepie en Youtube sobre los riesgos de confiar
 
 # Episodio 2: El primer paso, el navegador web.
 El primer paso, evidentemente debía ser el navegador, no podía pretender usar Chrome con Google como motor de búsqueda para que Google rastreara y guardara toda la información de mis consultas en internet o vendiera mi información personal a compañías de publicidad, pero, con esto existe un problema real, dadas las condiciones de escasa velocidad de internet en Cuba (ya sea mediante datos móviles o WiFi), Google es la alternativa más rápida, y la velocidad en mi contexto era insustituible, porque, a una conexión de 800mbps que se le resten unos 2mbps por usar un motor de búsqueda alterno en nada afecta, pero para mí cada kilobyte era necesario. Con esto explicado, mis alternativas se reducían incluso más, si pensamos en un navegador como Brave (pesado en la privacidad del usuario y bloquedor de anuncios de primer orden), que sería la mejor opción, tenemos que descartarlo, ya que dadas las restricciones del embargo norteamericano a Cuba, el dominio virtual de Brave no es accesible desde la Isla, y usar VPN es impensable, ya que esto también reduce considerablemente la ya mermada conexión disponible. Entonces, ante las limitaciones apareció un salvador, Mozilla Firefox, especialmente su versión para desarrolladores, Nightly, era precisamente lo que necesitaba, Open Source, ligero y, con algunas configuraciones extra, extremadamente privado. Entonces, el primer paso con el navegador decidido era seleccionar el motor de búsqueda, mi primera y más lúcida opción fue DuckDuckGo, a efectos reales es la mejor elección, pero volvemos al fatalismo, DDG resultaba frustrantemente más lento que  Google, de nuevo, en mi contexto, estos retrasos, aunque mínimos, resultaban insostenibles. Entonces apareció la opción de Startpage, buscador que arroja los resultados de Google Search pero elimina toda tu información personal (IP, rastreadores, etc), si bien en 2019 Privacy One Group (subsidiaria de System1, una empresa de publicidad)invirtió en Startpage, estos mantienen su postura en cuanto la privacidad, la elección es, creerles o desconfiar y sacrificar velocidad usando DDG (genuinamente si tienes paciencia es la mejor opción, aunque algunos prefieren Startpage porque muestra los resultados de Google, cosa que DDG no hace). Ya tenía navegador + buscador, un buen combo para la privacidad, pero eso no era todo, necesitaba exprimir firefox, ¿qué hice?:
+
 Como primera capa:
-1- Protección antirrastreo mejorada (Configuración / Privacidad y Seguridad) marcada como «estricta», lo cual bloquea la mayoría de rastreadores visibles y ocultos, acelerando la carga de páginas.
-2- Control de envío de datos a Mozilla (también en ajustes), compañía al fin y al cabo, te agradezco por tus servicios, pero prefiero usarte en anonimato.
+
+### 1- Protección antirrastreo mejorada (Configuración / Privacidad y Seguridad) marcada como «estricta», lo cual bloquea la mayoría de rastreadores visibles y ocultos, acelerando la carga de páginas.
+
+### 2- Control de envío de datos a Mozilla (también en ajustes), compañía al fin y al cabo, te agradezco por tus servicios, pero prefiero usarte en anonimato.
 
 ### Como segunda capa: (`about:config`)
 1.  **Desactivar telemetría:**
@@ -24,12 +27,14 @@ Como primera capa:
 ...
 
 Como tercera capa: la capa de cifrado (DNS y Conexiones):
-1- Solo conexiones seguras (HTTPS-Only): Configuración/Privacidad y Seguridad
-2- Cifrar las consultas DNS (DNS sobre HTTPS): Configuración/Privacidad y Seguridad/ DNS sobre HTTPS, seleccionar Protección Máxima.
+
+### 1- Solo conexiones seguras (HTTPS-Only): Configuración/Privacidad y Seguridad
+### 2- Cifrar las consultas DNS (DNS sobre HTTPS): Configuración/Privacidad y Seguridad/ DNS sobre HTTPS, seleccionar Protección Máxima.
 
 Como cuarta capa: las extensiones:
-1- uBlock Origin, bloquea anuncios y rastreadores.
-2- Bitwarden, gestiona constraseñas de forma segura.
+
+### 1- uBlock Origin, bloquea anuncios y rastreadores.
+### 2- Bitwarden, gestiona constraseñas de forma segura.
 
 Cabe señalar que las configuraciones de DNS aquí descritas solo aplican a la app de Firefox, ergo, también puse un DNS en los ajustes del móvil: dns.mullvad,net.
 
