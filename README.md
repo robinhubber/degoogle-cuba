@@ -1,4 +1,11 @@
-# Episodio 1, La cuestión:
+## 🗺️ Guía de la Odisea
+
+- [Episodio 1: La cuestión](#episodio-1-la-cuestión)
+- [Episodio 2: El primer paso, el navegador web](#episodio-2-el-primer-paso-el-navegador-web)
+- [Episodio 3: Sustituir el ecosistema de Samsung](#episodio-3-sustituir-el-ecosistema-de-samsung)
+- [Episodio 4: El eslabón faltante](#episodio-4-el-eslabón-faltante)
+- [Episodio 5: Conclusiones](#episodio-5-conclusiones)
+- # Episodio 1, La cuestión:
 Hace unos meses vi un video de Pewdiepie en Youtube sobre los riesgos de confiar demasiado en el ecosistema digital de Google, por razones de vulneración a la privacidad y obtención por parte de la compañía norteamericana de datos sensibles sobre los usuarios de todo el mundo bajo la premisa del buen samaritano que te facilita la vida digital. Ante esto Pewdiepie decidió eliminar radicalmente sus vínculos con Google, literalmente eliminó cualquier rastro de la compañía en su ecosistema digital, bajo la piedra angular de este proceso: GrapheneOS, un sistema operativo alternativo a las distribuciones tradicionales de los androids del mercado que está enfocado en la privacidad y en devolverte el control de tu propio móvil, algo que siempre debió ser tuyo. Desde entonces he estado francamente obsesionado con este tema, pero lo había dejado en suspenso (tuve algunos intentos bastante humildes al respecto) dadas las condiciones personales que tenía para llevarlo a cabo: primero, el fatalismo geográfico: al vivir en Cuba (y dentro de esta, en un sitio nada medular), mis opciones reales de una conexión estable a internet para realizar todas las descargas y modificaciones parecía alejada; y segundo, las condiciones económicas limitadas, o sea, un móvil de gama baja para el cual tendría que adaptar muchas de las aplicaciones que encontrase investigando dada la lentitud del procesador. Para no aburrir, básicamente me propuse degooglear un Samsung A12 en Cuba sin GrapheneOS (es compatible casi exclusivamente con los Pixel de Google) y sin un internet de fibra óptica para descargar aplicaciones en un pestañazo. Por contextualizar, la mayoría de las veces mi velocidad de descarga no superaba el umbral de los 800kbps, a todo esto, decidí emprender esta odisea en medio de las escalada de presiones económicas hacia la Isla por parte de la administración Trump y los largos períodos de ausencia de electricidad. Antes de comenzar quisiera dejar algo bien claro, esto no es, en ningún sentido un panfleto sobre política, por ende, deseo que se excluya el contenido del mismo de cualquier discusión en ese rubro, esto, solamente, se trata de un acto de soberanía digital bajo condiciones complejas.
 
 # Episodio 2: El primer paso, el navegador web.
@@ -7,12 +14,14 @@ Como primera capa:
 1- Protección antirrastreo mejorada (Configuración / Privacidad y Seguridad) marcada como «estricta», lo cual bloquea la mayoría de rastreadores visibles y ocultos, acelerando la carga de páginas.
 2- Control de envío de datos a Mozilla (también en ajustes), compañía al fin y al cabo, te agradezco por tus servicios, pero prefiero usarte en anonimato.
 
-Como segunda capa: (introduciendo en la barra de búsqueda about:config)
-1- Desactivación de la telemetría: toolkit.telemetry.enabed y datareporting.healthreport.uploadEnabled a false ambos valores.
-2- Desactivación de las preconexiones: network.prefetch-next y network.dns.disablePrefetch en false y true respectivamente.
-3- Clausura de fugas de IP (WebRTC): media.peerconnection.enabled en false.
-4- Aislamiento de cookies (dFPI): network.cookie.cookieBehavior a valor 5.
-5- Evasión de la huella digital (esto puede romper algunas páginas, pues es experimental, usar a precaución): privacy.resistFingerprinting.
+### Como segunda capa: (`about:config`)
+1.  **Desactivar telemetría:**
+    *   `toolkit.telemetry.enabled` -> **false**
+    *   `datareporting.healthreport.uploadEnabled` -> **false**
+2.  **Desactivar preconexiones:**
+    *   `network.prefetch-next` -> **false**
+    *   `network.dns.disablePrefetch` -> **true**
+...
 
 Como tercera capa: la capa de cifrado (DNS y Conexiones):
 1- Solo conexiones seguras (HTTPS-Only): Configuración/Privacidad y Seguridad
@@ -30,7 +39,7 @@ Con todo esto, byebye Google Chrome y Google Search.
 
 Dentro de la privacidad, las aplicaciones Open Source juegan un papel fundamental, y no basta con eliminar Google, también había que encontrar una alternativa a las apps de Samsung (Teléfono, Mensajes, Calculadora, Cámara, Calendario, Contactos, Grabadora de voz, Gestor de Archivos, Notas, Reproductor de música y Reproductor de vídeo) y a las otras apps que entorpecían mi ecosistema Open Source idílico (Google Play Store, GoogleBoard o Teclado de Samsung, Microsoft 365, Google Fotos o Galería de Samsung)
 Ante esto, necesitaba una app Open Source para descargar las apps alternativas y evitar Google Play Store, ahí apareció F-Droid, un repositorio de apps libres masivo, al cual se pueden añadir librerías, y el cual tiene políticas de privacidad elevadas.
-Comencé, pues, con la familia de Fossify, un ecosistema Open Source basado en privacidad que está muy bien optimizado, de esta obtuve: Teléfono, Mensajes, Calendario, Contactos, Grabadora de voz y reproductor de música. En fossify encontré un ecosistema digital pulido, ligero, discreto y altamente funcional.
+Comencé, pues, con la familia de Fossify https://github.com/FossifyOrg, un ecosistema Open Source basado en privacidad que está muy bien optimizado, de esta obtuve: Teléfono, Mensajes, Calendario, Contactos, Grabadora de voz y reproductor de música. En fossify encontré un ecosistema digital pulido, ligero, discreto y altamente funcional.
 Luego quise cubrir las apps restantes, para reproducción de video escogí VLC (de sobra conocido), para sustituir a Google Play Store, a Aurora Store, una app que te permite descargar apps de Google Play desde un login anónimo que no envía tus datos a Google (sí, es más lenta y las apps pesan más, pero es un sacrificio que había que tomar). Para la calculadora elegí OpenCalc, calculadora Open Source, ligera y sencilla. Para Microsoft 365 encontré Collabora Office, una app de LibreOffice que no recopila tus datos, no necesita internet para funcionar y funciona exactamente como las herramientas de Microsoft. Para Gboard, HeliBoard, la copia más funcional y ligera del teclado de Google, cómodo de usar y con un menú sencillo para tener varios idiomas a la vez, eso sí, sin el swype typing. Para Google Photos, Ente Photos, app de código abierto con cifrado de extremo a extremo (e2ee) muy robusto, que, quitando algunas funciones no vitales, funciona casi como la app de Google, otra opción es Fossify Gallery, en móviles incluso más modestos es la mejor opción. Para la cámara OpenCamera, app bastante personalizable y de código abierto, su interfaz puede no gustar a todos. Para el explorador de archivos, Material Files, el rey indiscutible en diseño y funcionabilidad, Open Source, desde luego. Para las notas, Notally, app excesivamente sencilla, de código abierto y con interfaz agradable. 
 Otras apps necesarias son una VPN y una app de Correo que no sea Gmail, desde luego, mis opciones en este caso fueron a una misma empresa: Proton, seleccioné Proton VPN y Proton Mail, para el VPN la mejor opción es Mullvad VPN, pero es inaccesible en Cuba porque requiere pago, y esto se dificulta en la Isla ya que no existe la infraestructura necesaria para ese propósito.
 
