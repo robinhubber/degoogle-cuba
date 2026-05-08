@@ -1,3 +1,81 @@
+## 🗺️ Guide to the Odyssey
+
+- [Episode 1: The Question](#episode-1-the-question)
+- [Episode 2: The First Step, the Web Browser](#episode-2-the-first-step-the-web-browser)
+- [Episode 3: Replacing the Samsung Ecosystem](#episode-3-replacing-the-samsung-ecosystem)
+- [Episode 4: The Missing Link](#episode-4-the-missing-link)
+- [Episode 5: Conclusions](#episode-5-conclusions)
+
+# Episode 1: The Question
+
+A few months ago I watched a PewDiePie video on YouTube about the risks of trusting Google's digital ecosystem too much, due to privacy violations and the collection of sensitive user data by the American company under the premise of the good Samaritan that makes your digital life easier. In response, PewDiePie decided to radically cut his ties with Google, literally removing any trace of the company from his digital ecosystem, with GrapheneOS as the cornerstone of this process: an alternative operating system to the traditional Android distributions on the market, focused on privacy and giving you back control of your own phone—something that should always have been yours. Since then I have been frankly obsessed with this topic, but I had left it on hold (I had a few very humble attempts at it) given the personal circumstances I faced to carry it out: first, geographical fatalism: living in Cuba (and within it, in a non-central place), my real chances of a stable internet connection to perform all the downloads and modifications seemed remote; and second, limited economic conditions, that is, a low-end phone for which I would have to adapt many of the applications I found during my research due to the processor's slowness. To cut a long story short, I basically set out to degoogle a Samsung A12 in Cuba without GrapheneOS (it is compatible almost exclusively with Google Pixel devices) and without fiber-optic internet to download apps in the blink of an eye. For context, most of the time my download speed did not exceed the 800 kbps threshold. On top of all this, I decided to undertake this odyssey amidst the escalation of economic pressure on the Island by the Trump administration and long periods without electricity. Before starting, I would like to make something very clear: this is not, in any sense, a political pamphlet; therefore, I wish to exclude its content from any discussion in that sphere. This is simply an act of digital sovereignty under complex conditions.
+
+# Episode 2: The First Step, the Web Browser
+
+The first step, obviously, had to be the browser. I couldn't pretend to use Chrome with Google as the search engine so that Google could track and store all the information of my internet searches or sell my personal information to advertising companies. But there is a real problem with this: given the conditions of scarce internet speed in Cuba (whether via mobile data or WiFi), Google is the fastest alternative, and speed in my context was irreplaceable, because subtracting about 2 Mbps for using an alternative search engine from an 800 Mbps connection has no noticeable effect, but for me every kilobyte was necessary. With this explained, my alternatives were reduced even further. If we think of a browser like Brave (heavy on user privacy and a first-rate ad blocker), which would be the best option, we have to discard it, since given the restrictions of the US embargo on Cuba, the Brave virtual domain is not accessible from the Island, and using a VPN is unthinkable, as this also considerably reduces the already diminished available connection. So, faced with the limitations, a savior appeared: Mozilla Firefox, especially its developer version, Nightly, was exactly what I needed—Open Source, lightweight, and, with some extra configurations, extremely private. So, the first step with the browser decided, I had to select the search engine. My first and most lucid choice was DuckDuckGo; in real terms it is the best choice, but we return to fatalism: DDG was frustratingly slower than Google. Again, in my context, these delays, although minimal, were unsustainable. Then the Startpage option appeared: a search engine that returns Google Search results but removes all your personal information (IP, trackers, etc.). Although in 2019 Privacy One Group (a subsidiary of System1, an advertising company) invested in Startpage, the company maintains its stance on privacy. The choice is to believe them or distrust them and sacrifice speed by using DDG (genuinely, if you have patience, it is the best option, although some prefer Startpage because it shows Google results, which DDG does not). Now I had browser + search engine, a good combo for privacy, but that wasn't everything—I needed to squeeze Firefox. What did I do?
+
+## First layer
+
+- **Enhanced tracking protection** (Settings / Privacy and Security) set to **"strict"**, which blocks most visible and hidden trackers, speeding up page loading.
+- **Control of data sent to Mozilla** (also in settings)—a company after all. I thank you for your services, but I prefer to use you anonymously.
+
+## Second layer (entering `about:config` in the address bar)
+
+- **Disable telemetry**
+  - `toolkit.telemetry.enabled` → `false`
+  - `datareporting.healthreport.uploadEnabled` → `false`
+- **Disable pre-connections**
+  - `network.prefetch-next` → `false`
+  - `network.dns.disablePrefetch` → `true`
+- **Close IP leaks (WebRTC)**
+  - `media.peerconnection.enabled` → `false`
+- **Cookie isolation (dFPI)**
+  - `network.cookie.cookieBehavior` → `5`
+- **Fingerprinting evasion** (this may break some pages, as it is experimental; use with caution)
+  - `privacy.resistFingerprinting` → `true`
+
+## Third layer: encryption (DNS and connections)
+
+- **Secure connections only (HTTPS-Only)**
+  - Enable it in `Settings > Privacy and Security`.
+- **Encrypt DNS queries (DNS over HTTPS)**
+  - Go to `Settings > Privacy and Security > DNS over HTTPS`, select **Maximum Protection** and choose a provider (for example, Cloudflare or NextDNS).
+
+## Fourth layer: extensions
+
+- **[uBlock Origin](https://addons.mozilla.org/firefox/addon/ublock-origin/)** – blocks ads and trackers.
+- **[Bitwarden](https://addons.mozilla.org/firefox/addon/bitwarden-password-manager/)** – manages passwords securely.
+
+It should be noted that the DNS configurations described here only apply to the Firefox app; therefore, I also set a DNS in the phone's settings: `dns.mullvad.net`.
+
+With all this, bye-bye Google Chrome and Google Search.
+
+# Episode 3: Replacing the Samsung Ecosystem
+
+In the realm of privacy, Open Source applications play a fundamental role, and it is not enough to eliminate Google. I also had to find an alternative to Samsung apps (Phone, Messages, Calculator, Camera, Calendar, Contacts, Voice Recorder, File Manager, Notes, Music Player, and Video Player) and to the other apps that hindered my idyllic Open Source ecosystem (Google Play Store, Google Board or Samsung Keyboard, Microsoft 365, Google Photos or Samsung Gallery).
+
+Faced with this, I needed an Open Source app to download alternative apps and avoid Google Play Store. That is where F-Droid appeared: a massive repository of free apps, to which libraries can be added, and which has strong privacy policies.
+
+I started, therefore, with the Fossify family, an Open Source ecosystem based on privacy that is very well optimized. From it I obtained: Phone, Messages, Calendar, Contacts, Voice Recorder, and Music Player. In Fossify I found a polished, lightweight, discreet, and highly functional digital ecosystem.
+
+Then I wanted to cover the remaining apps. For video playback I chose VLC (well-known enough to spare an introduction). To replace Google Play Store, Aurora Store: an app that allows you to download apps from Google Play with an anonymous login that does not send your data to Google (yes, it is slower and the apps are larger, but it was a sacrifice that had to be made). For the calculator I chose OpenCalc, a lightweight and simple Open Source calculator. For Microsoft 365 I found Collabora Office, a LibreOffice app that does not collect your data, does not need an internet connection to function, and works exactly like Microsoft's tools. For Gboard, HeliBoard: the most functional and lightweight copy of the Google keyboard, comfortable to use and with a simple menu for having multiple languages at the same time, though without swipe typing. For Google Photos, Ente Photos: an open-source app with very robust end-to-end encryption (e2ee) that, minus some non-vital features, works almost like the Google app. Another option is Fossify Gallery; on even more modest phones it is the best choice. For the camera, OpenCamera: a fairly customizable and open-source app, though its interface may not please everyone. For the file explorer, Material Files: the undisputed king in design and functionality, Open Source, of course. For notes, Notally: an exceedingly simple app, open source and with a pleasant interface.
+
+Other necessary apps are a VPN and an email app that is not Gmail. My choices in this case were from the same company: Proton. I selected Proton VPN and Proton Mail. For VPN, the best option is Mullvad VPN, but it is inaccessible in Cuba because it requires payment, and this is difficult on the Island since the necessary infrastructure for that purpose does not exist.
+
+# Episode 4: The Missing Link
+
+With all this we have solid work, but it can be better. One obstacle to overcome is Google Play Services: so to speak, the operating system within the operating system. This app is responsible for push notifications, location, authentication, and compatibility for a large part of the apps (via APIs). The option to replace this service is MicroG, an open-source project that acts in the same way. For my Samsung A12, this option was conflictive, since the best way MicroG could work is with a native operating system with support, like LineageOS, but these ROMs are not compatible with my phone model. There is the option of installing it on my own system without changing anything, but it may be unstable, and given the possibility of crashes or technical conflicts, it is better not to risk it, given the absence of reliable and quality technical support on the Island. Therefore, for now I can only make this concession, aiming to try it in the future under different conditions, or on an alternative phone on which to experiment.
+
+# Episode 5: Conclusions
+
+All things considered, my goals with this series were: first, to demonstrate that with dedication, curiosity, and a lot of patience something like this is possible under complex logistical conditions; second, to bring topics like these (without being an expert at all) to an audience that lacks this type of awareness—the Spanish-speaking, and specifically, the Cuban public. And yes, this may seem like extreme or paranoid behavior, but protecting your privacy and personal information is a universal right, which, whether out of carelessness, laziness, or ignorance, we tend to overlook, but which, as has been shown, is within the reach of anyone who wants to take care of their digital life (increasingly important in our world). Yes, it is not a complete degoogleization job; there are loose ends, whether due to concessions I had to make given my circumstances, or due to technological or geographical abysses that are insurmountable for me for now (self-hosting, the US embargo, the modesty of the hardware).
+
+My goal, I must reiterate, is not to twist my discourse towards political paths, nor, much less, to impose digital behaviors on others. It is simply to educate, to advise, on digital sovereignty and cybersecurity. Another thing: I mention here some apps selected at my discretion through my own research, but that does not make them the best for this process, much less the only ones. I invite you to search by your own means, to inform yourselves, to experiment, and, like me, to overcome the difficulties of the path, something that, from experience, is tremendously satisfying.
+
+---
+
+## 📖 Versión original en español
+
 ## 🗺️ Guía de la Odisea
 
 - [Episodio 1: La cuestión](#episodio-1-la-cuestión)
@@ -67,3 +145,4 @@ Con todo esto tenemos un trabajo sólido, pero puede ser mejor, un obstáculo a 
 A todo esto, mis objetivos con esta serie eran, primero, demostrar que con empeño, curiosidad, y mucha paciencia es posible algo como esto bajo condiciones logísticas complejas, dos, llevar temas como estos (sin ser un experto para nada) a un público que carece de este tipo de concientización, el hispanohablante, y, específicamente, el cubano, y sí, es probable que esto parezca una conducta extrema, o paranoica, pero proteger tu privacidad e información personal es un derecho universal, el cual, ya sea por despreocupados, holgazanes, o ignorantes, solemos soslayar, pero que, como se ha visto, esta al alcance de todo aquel que quiera cuidar su vida digital (cada vez más importante en nuestro mundo).
 Y sí, no es un trabajo de degoogleización completo, hay cabos sueltos, ya sea por concesiones que tuve que realizar dadas mis condiciones, o por abismos tecnológicos o geográficos insondables para mí por ahora (el selfhosting, el embargo norteamericano, la modestia del hardware).
 Mi objetivo, cabe reiterar, no es la tergiversación de mi discurso en torno a derroteros de la política, ni, mucho menos, imponer conductas digitales a los demás, simplemente educar, aconsejar, sobre la soberanía digital y la seguridad cibernética. Otra cosa, yo aquí menciono algunas apps seleccionadas a mi arbitrio mediante investigación propia, pero eso no las hace las mejores para este proceso, ni mucho menos, las únicas, los invito a buscar por sus medios, informarse, experimentar y, como yo, sortear las dificultades del camino, cosa que, por experiencia, resulta tremendamente satisfactoria.
+
